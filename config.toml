@@ -1,5 +1,6 @@
-baseURL = "https://thienluhoan.github.io/workshop-template/"
-relativeURLs = true
+baseURL = "https://halricklee.github.io/OJT_Fall2025/"
+# Use absolute URLs for GitHub Pages to ensure links and assets resolve correctly
+relativeURLs = false
 canonifyURLs = true
 
 # Change the default theme to be use when building the site with Hugo
