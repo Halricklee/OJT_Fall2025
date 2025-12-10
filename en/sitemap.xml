@@ -158,6 +158,18 @@
                 href="https://halricklee.github.io/OJT_Fall2025/2-proposal/"
                 />
   </url><url>
+    <loc>https://halricklee.github.io/OJT_Fall2025/5-workshop/5.2-prerequiste/5.2/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://halricklee.github.io/OJT_Fall2025/vi/5-workshop/5.2-prerequiste/5.2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://halricklee.github.io/OJT_Fall2025/5-workshop/5.2-prerequiste/5.2/"
+                />
+  </url><url>
     <loc>https://halricklee.github.io/OJT_Fall2025/5-workshop/5.3-dynamodb-s3/5.3.1-dynamodb/5.3.1/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -288,6 +300,32 @@
                 href="https://halricklee.github.io/OJT_Fall2025/4-eventparticipated/"
                 />
   </url><url>
+    <loc>https://halricklee.github.io/OJT_Fall2025/5-workshop/5.5-ci-cd/5.5/</loc>
+    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://halricklee.github.io/OJT_Fall2025/vi/5-workshop/5.5-ci-cd/5.5/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://halricklee.github.io/OJT_Fall2025/5-workshop/5.5-ci-cd/5.5/"
+                />
+  </url><url>
+    <loc>https://halricklee.github.io/OJT_Fall2025/5-workshop/5.6-clean-up/5.6/</loc>
+    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://halricklee.github.io/OJT_Fall2025/vi/5-workshop/5.6-clean-up/5.6/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://halricklee.github.io/OJT_Fall2025/5-workshop/5.6-clean-up/5.6/"
+                />
+  </url><url>
     <loc>https://halricklee.github.io/OJT_Fall2025/1-worklog/1.5-week5/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -299,19 +337,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://halricklee.github.io/OJT_Fall2025/1-worklog/1.5-week5/"
-                />
-  </url><url>
-    <loc>https://halricklee.github.io/OJT_Fall2025/5-workshop/5.5-policy/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://halricklee.github.io/OJT_Fall2025/vi/5-workshop/5.5-policy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://halricklee.github.io/OJT_Fall2025/5-workshop/5.5-policy/"
                 />
   </url><url>
     <loc>https://halricklee.github.io/OJT_Fall2025/5-workshop/</loc>
@@ -351,19 +376,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://halricklee.github.io/OJT_Fall2025/1-worklog/1.6-week6/"
-                />
-  </url><url>
-    <loc>https://halricklee.github.io/OJT_Fall2025/5-workshop/5.6-cleanup/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://halricklee.github.io/OJT_Fall2025/vi/5-workshop/5.6-cleanup/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://halricklee.github.io/OJT_Fall2025/5-workshop/5.6-cleanup/"
                 />
   </url><url>
     <loc>https://halricklee.github.io/OJT_Fall2025/7-feedback/</loc>
