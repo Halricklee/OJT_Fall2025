@@ -15,21 +15,21 @@
     <title>Proposal :: Internship Report</title>
 
     
-    <link href="../css/nucleus.css?1765333769" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1765333769" rel="stylesheet">
-    <link href="../css/hybrid.css?1765333769" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1765333769" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1765333769" rel="stylesheet">
-    <link href="../css/auto-complete.css?1765333769" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1765333769" rel="stylesheet">
-    <link href="../css/theme.css?1765333769" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1765333769" rel="stylesheet">
+    <link href="../css/nucleus.css?1765365721" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1765365721" rel="stylesheet">
+    <link href="../css/hybrid.css?1765365721" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1765365721" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1765365721" rel="stylesheet">
+    <link href="../css/auto-complete.css?1765365721" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1765365721" rel="stylesheet">
+    <link href="../css/theme.css?1765365721" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1765365721" rel="stylesheet">
     
-    <link href="../css/theme-workshop.css?1765333769" rel="stylesheet">
+    <link href="../css/theme-workshop.css?1765365721" rel="stylesheet">
     
     
 
-    <script src="../js/jquery-3.3.1.min.js?1765333769"></script>
+    <script src="../js/jquery-3.3.1.min.js?1765365721"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1765333769"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1765333769"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1765365721"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1765365721"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/halricklee.github.io\/OJT_Fall2025\/";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1765333769"></script>
+<script type="text/javascript" src="../js/search.js?1765365721"></script>
  
   </div>
 
@@ -865,16 +865,40 @@
                     <div class="progress">
   <div class="wrapper"><nav id="TableOfContents">
   <ul>
-    <li><a href="#project-proposal-summary-version--markdown-english">Project Proposal (Summary Version – Markdown, English)</a></li>
     <li><a href="#1-executive-summary">1. Executive Summary</a></li>
-    <li><a href="#2-problem-statement">2. Problem Statement</a></li>
-    <li><a href="#3-solution-architecture">3. Solution Architecture</a></li>
-    <li><a href="#4-technical-implementation">4. Technical Implementation</a></li>
+    <li><a href="#2-problem-statement">2. Problem Statement</a>
+      <ul>
+        <li><a href="#whats-the-problem">What’s the Problem?</a></li>
+        <li><a href="#the-solution">The Solution</a></li>
+        <li><a href="#benefits--roi">Benefits &amp; ROI</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-solution-architecture">3. Solution Architecture</a>
+      <ul>
+        <li><a href="#aws-services-used">AWS Services Used</a></li>
+        <li><a href="#component-design">Component Design</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-technical-implementation">4. Technical Implementation</a>
+      <ul>
+        <li><a href="#implementation-phases">Implementation Phases</a></li>
+        <li><a href="#tech-stack-requirements">Tech Stack Requirements</a></li>
+      </ul>
+    </li>
     <li><a href="#5-timeline--milestones">5. Timeline &amp; Milestones</a></li>
     <li><a href="#6-budget-estimation">6. Budget Estimation</a></li>
-    <li><a href="#7-risk-assessment">7. Risk Assessment</a></li>
-    <li><a href="#8-expected-outcomes">8. Expected Outcomes</a></li>
-    <li><a href="#9-game-design-overview--alien-rush">9. Game Design Overview – Alien Rush</a></li>
+    <li><a href="#7-risk-assessment">7. Risk Assessment</a>
+      <ul>
+        <li><a href="#risk-matrix">Risk Matrix</a></li>
+        <li><a href="#mitigation-strategy">Mitigation Strategy</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-expected-outcomes">8. Expected Outcomes</a>
+      <ul>
+        <li><a href="#technical-outcomes">Technical Outcomes</a></li>
+        <li><a href="#long-term-value">Long-Term Value</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
 </div>
@@ -900,35 +924,272 @@
 
 
 
-	<h1 id="alien-dash--aws-powered-gaming-infrastructure">Alien Dash – AWS-Powered Gaming Infrastructure</h1>
-<h2 id="project-proposal-summary-version--markdown-english">Project Proposal (Summary Version – Markdown, English)</h2>
+	<h1 id="serverless-multiplayer-game-backend">Serverless Multiplayer Game Backend</h1>
+<p>A Scalable AWS Solution for Real-Time Gaming &amp; AI Avatar Processing</p>
 <hr>
 <h2 id="1-executive-summary">1. Executive Summary</h2>
-<p>Alien Dash is a Unity endless runner powered by AWS services, addressing the lack of practical cloud-integrated projects for students. The system uses Lambda, DynamoDB, API Gateway, Cognito, and CloudFront to enable AI avatar generation, 1v1 real-time racing, and dynamic leaderboards. Benefits include hands-on cloud experience, reduced teaching overhead, and increased employability. The project spans 12 weeks with 5 members and an estimated cost of $0–100. Expected outcome: fully working WebGL demo with AI avatar, real-time mode, and ≥90% test success.</p>
+<p>This proposal outlines the development of a <strong>fully serverless backend infrastructure</strong> for a multiplayer Unity game.<br>
+The system is divided into three main responsibilities: DevOps, Backend, and Unity Frontend.</p>
+<p>AWS services will be used to provide:</p>
+<ul>
+<li><strong>User Authentication</strong> → Amazon Cognito</li>
+<li><strong>Gameplay &amp; Business Logic</strong> → AWS Lambda</li>
+<li><strong>Real-time Leaderboards</strong> → API Gateway WebSocket + DynamoDB Streams</li>
+<li><strong>AI Avatar Generation</strong> → Lambda Container (OpenCV/MediaPipe)</li>
+</ul>
+<p>This architecture ensures <strong>scalability, fault tolerance, CI/CD automation</strong>, and supports seamless deployment for WebGL via <strong>itch.io or CloudFront</strong>.</p>
 <hr>
 <h2 id="2-problem-statement">2. Problem Statement</h2>
-<p>PC endless runner games are limited, with ~90% of the market focused on mobile. Players lack desktop options, personalized avatars, and real-time 1v1 modes—reducing retention by up to 40%. Students lack real-world, multi-service cloud projects, while instructors need credible technical showcases. Without action, opportunities in PC casual gaming and cloud-education synergy are missed. Target demographics (young laptop/PC users) account for ~50% of the segment.</p>
+<h3 id="whats-the-problem">What’s the Problem?</h3>
+<p>Multiplayer games require real-time backend capability, identity management, and persistent state storage.<br>
+Traditional server-based systems:</p>
+<ul>
+<li>are expensive to run long-term</li>
+<li>scale poorly under heavy traffic spikes</li>
+<li>increase maintenance overhead</li>
+</ul>
+<p>Additionally, this project requires <strong>AI avatar transformation</strong>, which demands high compute power.</p>
+<h3 id="the-solution">The Solution</h3>
+<p>A scalable serverless architecture using AWS services:</p>
+<ul>
+<li><strong>Authentication:</strong> Amazon Cognito (User Pools + Hosted UI)</li>
+<li><strong>Logic:</strong> AWS Lambda (Zip + ECR container images)</li>
+<li><strong>Storage:</strong> S3 for avatars + DynamoDB for player metadata</li>
+<li><strong>Realtime:</strong> WebSocket API + DynamoDB Streams</li>
+</ul>
+<h3 id="benefits--roi">Benefits &amp; ROI</h3>
+<ul>
+<li><strong>Highly Cost Efficient</strong> → Pay-per-execution, no idle servers</li>
+<li><strong>Auto Scaling</strong> → Handles traffic bursts without manual scaling</li>
+<li><strong>CI/CD Ready</strong> → Quick feature rollout through CodePipeline/CodeBuild</li>
+</ul>
 <hr>
 <h2 id="3-solution-architecture">3. Solution Architecture</h2>
-<p>Serverless architecture using CloudFront + S3 for WebGL hosting; API Gateway + Lambda for backend logic; DynamoDB for data; Cognito for auth; CodePipeline for CI/CD. Main flow: User → Route53/WAF → CloudFront/S3 → API Gateway → Cognito → Lambda → DynamoDB → Streams/SNS → WebSocket. Security includes WAF, least-privilege IAM, encryption in-transit and at-rest. System auto-scales via serverless. Unity client and Admin Dashboard interact directly with API Gateway.</p>
+<p>The system uses an event-driven microservice approach.<br>
+Unity communicates with backend via <strong>REST APIs</strong> and <strong>WebSocket live streams</strong>, while avatar processing runs via container-based Lambda.</p>
+<h3 id="aws-services-used">AWS Services Used</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Category</th>
+          <th>Services</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Identity</td>
+          <td>Amazon Cognito</td>
+      </tr>
+      <tr>
+          <td>API</td>
+          <td>API Gateway REST + WebSocket</td>
+      </tr>
+      <tr>
+          <td>Compute</td>
+          <td>AWS Lambda (Zip + Container)</td>
+      </tr>
+      <tr>
+          <td>Database</td>
+          <td>DynamoDB + Streams</td>
+      </tr>
+      <tr>
+          <td>Storage</td>
+          <td>S3</td>
+      </tr>
+      <tr>
+          <td>Image Processing</td>
+          <td>ECR Container Lambda</td>
+      </tr>
+      <tr>
+          <td>CI/CD</td>
+          <td>CodePipeline, CodeBuild</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="component-design">Component Design</h3>
+<h4 id="frontend">Frontend</h4>
+<p>Unity WebGL build deployed on <strong>itch.io / CloudFront</strong>.</p>
+<h4 id="data-flow">Data Flow</h4>
+<ol>
+<li>User Login → Cognito Issues Token</li>
+<li>Unity → REST API (Lambda → DynamoDB)</li>
+<li>Avatar Upload → Presigned URL → S3</li>
+<li>AI Avatar Processor → Lambda Container (OpenCV/MediaPipe)</li>
+<li>Score Updates → DynamoDB Stream → WebSocket Broadcast Live</li>
+</ol>
 <hr>
 <h2 id="4-technical-implementation">4. Technical Implementation</h2>
-<p>Development phases: (1) Core AWS setup; (2) Backend APIs; (3) Unity integration; (4) Testing &amp; optimization; (5) CI/CD deployment. Compute via Lambda; Storage via S3 + DynamoDB; Network via Route53, CloudFront, WAF. Agile/Scrum workflow. Testing includes unit, integration, system, and performance. Deployment automated with CodePipeline/CodeBuild; rollback via Lambda versioning and DynamoDB backups. Monitoring via CloudWatch and X-Ray.</p>
+<h3 id="implementation-phases">Implementation Phases</h3>
+<ol>
+<li>
+<p><strong>Infrastructure Setup (DevOps)</strong><br>
+Cognito, DynamoDB, S3, API Gateway</p>
+</li>
+<li>
+<p><strong>Backend Skeleton (BE)</strong><br>
+Lambda endpoints + Postman scripts + API routing</p>
+</li>
+<li>
+<p><strong>Frontend Login (FE)</strong><br>
+AuthManager + Cognito integration</p>
+</li>
+<li>
+<p><strong>Integration Wiring (DevOps)</strong><br>
+REST + WebSocket + DynamoDB Streams wiring</p>
+</li>
+<li>
+<p><strong>Gameplay API Integration (FE)</strong><br>
+DataManager for score, money, progress, tasks</p>
+</li>
+<li>
+<p><strong>End-to-End Testing</strong><br>
+Login → Game API → Leaderboard → Avatar</p>
+</li>
+<li>
+<p><strong>Deployment</strong><br>
+Unity WebGL build + Allowed Redirect URLs</p>
+</li>
+</ol>
+<h3 id="tech-stack-requirements">Tech Stack Requirements</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Role</th>
+          <th>Stack</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Frontend</td>
+          <td>Unity (C#), AwsConfig, AuthManager, DataManager, RealtimeManager</td>
+      </tr>
+      <tr>
+          <td>Backend</td>
+          <td>Lambda NodeJS/Python, Docker Container (OpenCV/MediaPipe)</td>
+      </tr>
+      <tr>
+          <td>DevOps</td>
+          <td>IAM, API Gateway, DynamoDB Streams, CodePipeline/Build</td>
+      </tr>
+  </tbody>
+</table>
 <hr>
 <h2 id="5-timeline--milestones">5. Timeline &amp; Milestones</h2>
-<p>Week 1: GDD; Weeks 2–3: Architecture &amp; data flow; Weeks 4–7: Core gameplay + leaderboards; Weeks 8–9: Boss + cutscenes + shop; Weeks 10–11: Testing + optimization; Week 12: Deployment + demo. Milestones: GDD → Architecture → Gameplay → Boss → Testing → Demo. Five-person team with clear roles; one-week buffer for technical risks.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Phase</th>
+          <th>Duration</th>
+          <th>Deliverables</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Foundation</td>
+          <td>Days 1–3</td>
+          <td>Cognito, DynamoDB, S3, API Gateway</td>
+      </tr>
+      <tr>
+          <td>Logic Development</td>
+          <td>Days 3–8</td>
+          <td>Lambda API + Avatar Container + Unity Login</td>
+      </tr>
+      <tr>
+          <td>Integration</td>
+          <td>Days 8–12</td>
+          <td>Streams wired, APIs connected</td>
+      </tr>
+      <tr>
+          <td>Testing &amp; Launch</td>
+          <td>Days 13–15</td>
+          <td>WebGL live deployment + Leaderboard &amp; Avatar tests</td>
+      </tr>
+  </tbody>
+</table>
 <hr>
 <h2 id="6-budget-estimation">6. Budget Estimation</h2>
-<p>Most infrastructure stays within AWS Free Tier; estimated cost $0–100 total for 3 months. Tools: Unity Personal, Python, Figma (free). No direct labor cost (academic project). Optimization strategies: asset compression, presigned uploads, and AWS Budgets monitoring to avoid overage.</p>
+<p><em>(Based on AWS Pricing Calculator)</em></p>
+<table>
+  <thead>
+      <tr>
+          <th>Resource</th>
+          <th>Cost</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Lambda</td>
+          <td>Free Tier (low execution)</td>
+      </tr>
+      <tr>
+          <td>DynamoDB</td>
+          <td>Free Tier (25GB)</td>
+      </tr>
+      <tr>
+          <td>S3 Storage</td>
+          <td>$0.023/GB</td>
+      </tr>
+      <tr>
+          <td>CloudWatch Logs</td>
+          <td>~$0.5 - $1/month</td>
+      </tr>
+      <tr>
+          <td>ECR Storage</td>
+          <td>~$0.10/GB</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Estimated Total Cost &lt; $5/month during development.</strong></p>
 <hr>
 <h2 id="7-risk-assessment">7. Risk Assessment</h2>
-<p>Key risks: AWS misconfigurations, WebSocket instability, Unity–AWS integration complexity, exceeding Free Tier, skill gaps, schedule delays, and data exposure. Priorities: configuration errors and WebSocket reliability. Mitigation includes CloudFormation, reconnect/fallback HTTP, internal training, CloudWatch alarms, and strict IAM. Contingency plans: local fallback leaderboard, HTTP polling mode, or switching to AWS Educate accounts if needed.</p>
+<h3 id="risk-matrix">Risk Matrix</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Risk</th>
+          <th>Impact</th>
+          <th>Probability</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Integration complexity</td>
+          <td>High</td>
+          <td>Medium</td>
+      </tr>
+      <tr>
+          <td>Latency during peak loads</td>
+          <td>Medium</td>
+          <td>Low</td>
+      </tr>
+      <tr>
+          <td>Cost overrun</td>
+          <td>Low</td>
+          <td>Low</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="mitigation-strategy">Mitigation Strategy</h3>
+<ul>
+<li>Mock APIs using Postman during FE development</li>
+<li>Placeholder logic for shop &amp; leaderboard</li>
+<li>CloudWatch alarm triggers on error spikes (&gt;10/min)</li>
+</ul>
 <hr>
 <h2 id="8-expected-outcomes">8. Expected Outcomes</h2>
-<p>Short-term KPIs: API P95 &lt;100ms, leaderboard latency &lt;2s, uptime ≥99.5% during demo, 50+ concurrent support, AI avatar &lt;5s processing, cost &lt; $30/mo, and ≥90% test pass rate. Deliverables include functional WebGL demo, technical documentation, student portfolio artifacts, and reusable architecture for future cohorts.</p>
-<hr>
-<h2 id="9-game-design-overview--alien-rush">9. Game Design Overview – Alien Rush</h2>
-<p>Sci-fi endless runner across 3 Vietnam-inspired regions: Hanoi, Hoi An, Saigon. Contains 15 levels (5 per region) with boss stages at levels 5, 10, 15. Avatar system includes 2 default characters plus AI-generated avatars from user photos. Items include buffs/debuffs, currency (₫10,000), and shop purchases. Gameplay: dash/jump mechanics, obstacles, mystery boxes, boss fights, global leaderboards, and real-time 1v1 friend race using WebSocket sync and live events via SNS/Streams.</p>
+<h3 id="technical-outcomes">Technical Outcomes</h3>
+<ul>
+<li>Fully serverless backend infrastructure</li>
+<li>Secure identity &amp; data persistence</li>
+<li>Real-time leaderboard support</li>
+<li>Automated avatar processing pipeline</li>
+</ul>
+<h3 id="long-term-value">Long-Term Value</h3>
+<ul>
+<li>Reusable architecture for any future game titles</li>
+<li>Auto-scales without provisioning servers</li>
+<li>Extremely low operational cost</li>
+</ul>
 <hr>
 
 
@@ -1560,19 +1821,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1765333769"></script>
-    <script src="../js/perfect-scrollbar.min.js?1765333769"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1765333769"></script>
-    <script src="../js/jquery.sticky.js?1765333769"></script>
-    <script src="../js/featherlight.min.js?1765333769"></script>
-    <script src="../js/highlight.pack.js?1765333769"></script>
+    <script src="../js/clipboard.min.js?1765365721"></script>
+    <script src="../js/perfect-scrollbar.min.js?1765365721"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1765365721"></script>
+    <script src="../js/jquery.sticky.js?1765365721"></script>
+    <script src="../js/featherlight.min.js?1765365721"></script>
+    <script src="../js/highlight.pack.js?1765365721"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1765333769"></script>
-    <script src="../js/learn.js?1765333769"></script>
-    <script src="../js/hugo-learn.js?1765333769"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1765365721"></script>
+    <script src="../js/learn.js?1765365721"></script>
+    <script src="../js/hugo-learn.js?1765365721"></script>
 
-    <link href="../mermaid/mermaid.css?1765333769" rel="stylesheet" />
-    <script src="../mermaid/mermaid.js?1765333769"></script>
+    <link href="../mermaid/mermaid.css?1765365721" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js?1765365721"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

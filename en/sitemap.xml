@@ -145,19 +145,6 @@
                 href="https://halricklee.github.io/OJT_Fall2025/1-worklog/1.2-week2/"
                 />
   </url><url>
-    <loc>https://halricklee.github.io/OJT_Fall2025/2-proposal/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://halricklee.github.io/OJT_Fall2025/vi/2-proposal/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://halricklee.github.io/OJT_Fall2025/2-proposal/"
-                />
-  </url><url>
     <loc>https://halricklee.github.io/OJT_Fall2025/5-workshop/5.2-prerequiste/5.2/</loc>
     <xhtml:link
                 rel="alternate"
@@ -168,6 +155,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://halricklee.github.io/OJT_Fall2025/5-workshop/5.2-prerequiste/5.2/"
+                />
+  </url><url>
+    <loc>https://halricklee.github.io/OJT_Fall2025/2-proposal/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://halricklee.github.io/OJT_Fall2025/vi/2-proposal/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://halricklee.github.io/OJT_Fall2025/2-proposal/"
                 />
   </url><url>
     <loc>https://halricklee.github.io/OJT_Fall2025/5-workshop/5.3-dynamodb-s3/5.3.1-dynamodb/5.3.1/</loc>

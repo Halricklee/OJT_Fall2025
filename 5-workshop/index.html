@@ -15,21 +15,21 @@
     <title>Workshop :: Internship Report</title>
 
     
-    <link href="../css/nucleus.css?1765333770" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1765333770" rel="stylesheet">
-    <link href="../css/hybrid.css?1765333770" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1765333770" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1765333770" rel="stylesheet">
-    <link href="../css/auto-complete.css?1765333770" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1765333770" rel="stylesheet">
-    <link href="../css/theme.css?1765333770" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1765333770" rel="stylesheet">
+    <link href="../css/nucleus.css?1765365722" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1765365722" rel="stylesheet">
+    <link href="../css/hybrid.css?1765365722" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1765365722" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1765365722" rel="stylesheet">
+    <link href="../css/auto-complete.css?1765365722" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1765365722" rel="stylesheet">
+    <link href="../css/theme.css?1765365722" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1765365722" rel="stylesheet">
     
-    <link href="../css/theme-workshop.css?1765333770" rel="stylesheet">
+    <link href="../css/theme-workshop.css?1765365722" rel="stylesheet">
     
     
 
-    <script src="../js/jquery-3.3.1.min.js?1765333770"></script>
+    <script src="../js/jquery-3.3.1.min.js?1765365722"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1765333770"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1765333770"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1765365722"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1765365722"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/halricklee.github.io\/OJT_Fall2025\/";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1765333770"></script>
+<script type="text/javascript" src="../js/search.js?1765365722"></script>
  
   </div>
 
@@ -868,6 +868,11 @@
     <li>
       <ul>
         <li></li>
+        <li><a href="#1-game-asset-delivery">1. <strong>Game Asset Delivery</strong></a></li>
+        <li><a href="#2-player-authentication--identity">2. <strong>Player Authentication &amp; Identity</strong></a></li>
+        <li><a href="#3-secure-game-api-backend">3. <strong>Secure Game API Backend</strong></a></li>
+        <li><a href="#4-data-storage--game-state-management">4. <strong>Data Storage &amp; Game State Management</strong></a></li>
+        <li><a href="#5-monitoring-logging-and-events">5. <strong>Monitoring, Logging, and Events</strong></a></li>
       </ul>
     </li>
   </ul>
@@ -895,31 +900,80 @@
 
 
 
-	
-<div
-  class="notices warning"
-  
->
-  <p>⚠️ <strong>Note:</strong> The information below is for reference purposes only. Please <strong>do not copy verbatim</strong> for your report, including this warning.</p>
-
-</div>
-
-<h1 id="secure-hybrid-access-to-s3-using-vpc-endpoints">Secure Hybrid Access to S3 using VPC Endpoints</h1>
-<h4 id="overview">Overview</h4>
-<p><strong>AWS PrivateLink</strong> provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.</p>
-<p>In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.</p>
-<p>You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location</p>
+	<h4 id="overview">Overview</h4>
+<p>In this workshop, you will explore how to design and deploy a secure, scalable, and cost-efficient cloud architecture to support the <strong>Alien Dash</strong> game project.<br>
+The goal of the workshop is to provide hands-on experience with core AWS services that enable authentication, asset delivery, game analytics, backend processing, and CI/CD — all without exposing resources to the Public Internet.</p>
+<p>You will implement a hybrid cloud architecture that connects your game client (Unity), backend services, and AWS-managed components through secure, private communication channels.</p>
+<p>The workshop focuses on building two essential infrastructure capabilities for the game:</p>
 <ul>
-<li><strong>Gateway</strong> - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.</li>
-<li><strong>Interface</strong> - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.</li>
+<li>
+<p><strong>Secure Player Authentication &amp; API Access</strong><br>
+Use Amazon Cognito for user sign-in, token-based authentication, and least-privilege communication between the client and backend.</p>
+</li>
+<li>
+<p><strong>Private Game Backend Services</strong><br>
+Deploy serverless or container-based backend components (Lambda, ECS, or API Gateway) that process gameplay events, store player progress, and handle dynamic content — all routed through private networking using VPC endpoints.</p>
+</li>
+</ul>
+<p>This architecture ensures:</p>
+<ul>
+<li>No public S3 buckets or public APIs</li>
+<li>All communication between game client → backend → database runs through secure channels</li>
+<li>Scalable backend that grows with player activity</li>
+<li>Logging, monitoring, and security built-in from day one</li>
+</ul>
+<hr>
+<h4 id="what-you-will-build">What You Will Build</h4>
+<p>Throughout this workshop, you will implement the foundational backend infrastructure for the Alien Dash game, including:</p>
+<h3 id="1-game-asset-delivery">1. <strong>Game Asset Delivery</strong></h3>
+<ul>
+<li>Store game assets (images, sounds, configs) in a private S3 bucket</li>
+<li>Deliver assets to the game client using presigned URLs</li>
+<li>Restrict direct access using IAM and VPC gateway endpoints</li>
+</ul>
+<h3 id="2-player-authentication--identity">2. <strong>Player Authentication &amp; Identity</strong></h3>
+<ul>
+<li>Configure Amazon Cognito User Pools</li>
+<li>Integrate token-based authentication with the Unity client</li>
+<li>Apply secure callback URLs and app client settings</li>
+<li>Enforce MFA and secure token lifecycle</li>
+</ul>
+<h3 id="3-secure-game-api-backend">3. <strong>Secure Game API Backend</strong></h3>
+<ul>
+<li>Build and protect gameplay APIs using API Gateway + Lambda</li>
+<li>Validate Cognito JWT tokens on every request</li>
+<li>Process score submissions, level data, and event tracking</li>
+<li>Route private traffic through VPC endpoints instead of Public Internet</li>
+</ul>
+<h3 id="4-data-storage--game-state-management">4. <strong>Data Storage &amp; Game State Management</strong></h3>
+<ul>
+<li>Use DynamoDB for fast player state and leaderboard data</li>
+<li>Enable point-in-time recovery and backup policies</li>
+<li>Implement access control using IAM roles and fine-grained permissions</li>
+</ul>
+<h3 id="5-monitoring-logging-and-events">5. <strong>Monitoring, Logging, and Events</strong></h3>
+<ul>
+<li>Centralize application logs in CloudWatch</li>
+<li>Track gameplay errors, crashes, and performance metrics</li>
+<li>Configure EventBridge rules for automation and alerts</li>
+</ul>
+<hr>
+<h4 id="why-this-architecture-matters">Why This Architecture Matters</h4>
+<p>Designing the Alien Dash game with AWS cloud principles allows you to:</p>
+<ul>
+<li>Maintain a <strong>fully secure environment</strong> with no publicly exposed storage</li>
+<li>Scale seamlessly as the number of players grows</li>
+<li>Optimize costs using serverless and pay-as-you-go models</li>
+<li>Implement clear separation between authentication, storage, and compute</li>
+<li>Build a strong foundation for future features such as analytics, matchmaking, or multiplayer logic</li>
 </ul>
 <h4 id="content">Content</h4>
 <ol>
 <li><a href="5.1-Workshop-overview">Workshop overview</a></li>
 <li><a href="5.2-Prerequiste/">Prerequiste</a></li>
-<li><a href="5.3-DynamoDB-S3/">Access S3 from VPC</a></li>
-<li><a href="5.4-API-GateWay-Lambda/">Access S3 from On-premises</a></li>
-<li><a href="5.5-CI-CD/">VPC Endpoint Policies (Bonus)</a></li>
+<li><a href="5.3-DynamoDB-S3/">DynamoDB &amp; S3</a></li>
+<li><a href="5.4-API-GateWay-Lambda/">API Gateway &amp; Lambda</a></li>
+<li><a href="5.5-CI-CD/">CI/CD</a></li>
 <li><a href="5.6-Clean-up/">Clean up</a></li>
 </ol>
 
@@ -1552,19 +1606,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1765333771"></script>
-    <script src="../js/perfect-scrollbar.min.js?1765333771"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1765333771"></script>
-    <script src="../js/jquery.sticky.js?1765333771"></script>
-    <script src="../js/featherlight.min.js?1765333771"></script>
-    <script src="../js/highlight.pack.js?1765333771"></script>
+    <script src="../js/clipboard.min.js?1765365722"></script>
+    <script src="../js/perfect-scrollbar.min.js?1765365722"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1765365722"></script>
+    <script src="../js/jquery.sticky.js?1765365722"></script>
+    <script src="../js/featherlight.min.js?1765365722"></script>
+    <script src="../js/highlight.pack.js?1765365722"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1765333771"></script>
-    <script src="../js/learn.js?1765333771"></script>
-    <script src="../js/hugo-learn.js?1765333771"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1765365722"></script>
+    <script src="../js/learn.js?1765365722"></script>
+    <script src="../js/hugo-learn.js?1765365722"></script>
 
-    <link href="../mermaid/mermaid.css?1765333771" rel="stylesheet" />
-    <script src="../mermaid/mermaid.js?1765333771"></script>
+    <link href="../mermaid/mermaid.css?1765365722" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js?1765365722"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
