@@ -15,21 +15,21 @@
     <title>Workshop :: Báo cáo thực tập</title>
 
     
-    <link href="../../css/nucleus.css?1765365724" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1765365724" rel="stylesheet">
-    <link href="../../css/hybrid.css?1765365724" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1765365724" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1765365724" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1765365724" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1765365724" rel="stylesheet">
-    <link href="../../css/theme.css?1765365724" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1765365724" rel="stylesheet">
+    <link href="../../css/nucleus.css?1765366677" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1765366677" rel="stylesheet">
+    <link href="../../css/hybrid.css?1765366677" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1765366677" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1765366677" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1765366677" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1765366677" rel="stylesheet">
+    <link href="../../css/theme.css?1765366677" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1765366677" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1765365724" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1765366677" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1765365724"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1765366677"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1765365724"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1765365724"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1765366677"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1765366677"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/halricklee.github.io\/OJT_Fall2025\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1765365724"></script>
+<script type="text/javascript" src="../../js/search.js?1765366677"></script>
  
   </div>
 
@@ -868,6 +868,11 @@
     <li>
       <ul>
         <li></li>
+        <li><a href="#1-phân-phối-tài-nguyên-game">1. <strong>Phân phối tài nguyên game</strong></a></li>
+        <li><a href="#2-xác-thực--định-danh-người-chơi">2. <strong>Xác thực &amp; định danh người chơi</strong></a></li>
+        <li><a href="#3-backend-api-bảo-mật">3. <strong>Backend API bảo mật</strong></a></li>
+        <li><a href="#4-lưu-trữ-dữ-liệu--trạng-thái-game">4. <strong>Lưu trữ dữ liệu &amp; trạng thái game</strong></a></li>
+        <li><a href="#5-giám-sát-log-và-sự-kiện">5. <strong>Giám sát, log và sự kiện</strong></a></li>
       </ul>
     </li>
   </ul>
@@ -895,23 +900,70 @@
 
 
 
-	
-<div
-  class="notices warning"
-  
->
-  <p>⚠️ <strong>Lưu ý:</strong> Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng <strong>không sao chép nguyên văn</strong> cho bài báo cáo của bạn kể cả warning này.</p>
-
-</div>
-
-<h1 id="đảm-bảo-truy-cập-hybrid-an-toàn-đến-s3-bằng-cách-sử-dụng-vpc-endpoint">Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint</h1>
-<h4 id="tổng-quan">Tổng quan</h4>
-<p><strong>AWS PrivateLink</strong> cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.</p>
-<p>Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.</p>
-<p>Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).</p>
+	<p>Trong workshop này, bạn sẽ khám phá cách thiết kế và triển khai một kiến trúc cloud bảo mật, mở rộng linh hoạt và tối ưu chi phí để phục vụ cho dự án game <strong>Alien Dash</strong>.<br>
+Mục tiêu của workshop là giúp bạn trải nghiệm thực tế các dịch vụ AWS cốt lõi dùng cho xác thực người chơi, phân phối tài nguyên game, backend xử lý logic và triển khai CI/CD — tất cả đều hoạt động qua các kênh bảo mật, không phơi bày tài nguyên lên Internet công cộng.</p>
+<p>Workshop tập trung vào việc xây dựng hai năng lực hạ tầng chính:</p>
 <ul>
-<li><strong>Gateway</strong> - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)</li>
-<li><strong>Interface</strong> - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.</li>
+<li>
+<p><strong>Xác thực người chơi &amp; truy cập API an toàn</strong><br>
+Sử dụng Amazon Cognito để đăng nhập, cấp token và đảm bảo giao tiếp từ client → backend tuân thủ nguyên tắc least privilege.</p>
+</li>
+<li>
+<p><strong>Hệ thống backend game bảo mật</strong><br>
+Triển khai các dịch vụ backend (Lambda, API Gateway hoặc ECS) để xử lý sự kiện gameplay, lưu tiến trình người chơi và phân phối nội dung động, thông qua mạng riêng bằng VPC endpoints.</p>
+</li>
+</ul>
+<p>Kiến trúc này đảm bảo:</p>
+<ul>
+<li>Không có bucket S3 public</li>
+<li>Không có API public mở rộng không kiểm soát</li>
+<li>Toàn bộ luồng dữ liệu client → backend → database đều chạy trong môi trường bảo mật</li>
+<li>Logging, monitoring và bảo mật được bật ngay từ giai đoạn thiết kế</li>
+</ul>
+<hr>
+<h4 id="nội-dung-bạn-sẽ-xây-dựng">Nội dung bạn sẽ xây dựng</h4>
+<p>Workshop này sẽ hướng dẫn bạn xây dựng nền tảng backend cho game Alien Dash, bao gồm:</p>
+<h3 id="1-phân-phối-tài-nguyên-game">1. <strong>Phân phối tài nguyên game</strong></h3>
+<ul>
+<li>Lưu trữ asset (ảnh, âm thanh, config) trong S3 bucket riêng tư</li>
+<li>Cung cấp tài nguyên cho Unity qua <strong>presigned URL</strong></li>
+<li>Hạn chế truy cập thông qua IAM và Gateway VPC Endpoint</li>
+</ul>
+<h3 id="2-xác-thực--định-danh-người-chơi">2. <strong>Xác thực &amp; định danh người chơi</strong></h3>
+<ul>
+<li>Cấu hình Cognito User Pool</li>
+<li>Tích hợp token-based authentication với client Unity</li>
+<li>Thiết lập callback URL và App Client Settings phù hợp giao diện mới</li>
+<li>Áp dụng bảo mật: MFA, thời gian sống token, xoay token</li>
+</ul>
+<h3 id="3-backend-api-bảo-mật">3. <strong>Backend API bảo mật</strong></h3>
+<ul>
+<li>Xây dựng API gameplay bằng API Gateway + Lambda</li>
+<li>Kiểm tra token Cognito ở mỗi request</li>
+<li>Xử lý logic game: gửi điểm, lưu cấp độ, theo dõi sự kiện chơi</li>
+<li>Toàn bộ traffic đi qua VPC Endpoint thay vì Internet công cộng</li>
+</ul>
+<h3 id="4-lưu-trữ-dữ-liệu--trạng-thái-game">4. <strong>Lưu trữ dữ liệu &amp; trạng thái game</strong></h3>
+<ul>
+<li>Sử dụng DynamoDB để lưu tiến trình người chơi và leaderboard</li>
+<li>Bật backup, PITR để đảm bảo an toàn dữ liệu</li>
+<li>Quản lý quyền truy cập bằng IAM Role tinh gọn</li>
+</ul>
+<h3 id="5-giám-sát-log-và-sự-kiện">5. <strong>Giám sát, log và sự kiện</strong></h3>
+<ul>
+<li>Tập trung log vào CloudWatch</li>
+<li>Theo dõi lỗi gameplay, crash và hiệu năng</li>
+<li>Thiết lập EventBridge để tự động hóa cảnh báo và xử lý sự kiện</li>
+</ul>
+<hr>
+<h4 id="tại-sao-kiến-trúc-này-quan-trọng">Tại sao kiến trúc này quan trọng?</h4>
+<p>Kiến trúc AWS cho game Alien Dash giúp bạn:</p>
+<ul>
+<li>Duy trì môi trường <strong>bảo mật hoàn toàn</strong> với mô hình private-first</li>
+<li>Tự động mở rộng theo số lượng người chơi</li>
+<li>Tối ưu chi phí nhờ serverless và pay-as-you-go</li>
+<li>Phân tách rõ ràng giữa authentication, compute và storage</li>
+<li>Tạo nền tảng sẵn sàng mở rộng sang phân tích dữ liệu, matchmaking hoặc multiplayer</li>
 </ul>
 <h4 id="nội-dung">Nội dung</h4>
 <ol>
@@ -1552,19 +1604,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1765365724"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1765365724"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1765365724"></script>
-    <script src="../../js/jquery.sticky.js?1765365724"></script>
-    <script src="../../js/featherlight.min.js?1765365724"></script>
-    <script src="../../js/highlight.pack.js?1765365724"></script>
+    <script src="../../js/clipboard.min.js?1765366677"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1765366677"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1765366677"></script>
+    <script src="../../js/jquery.sticky.js?1765366677"></script>
+    <script src="../../js/featherlight.min.js?1765366677"></script>
+    <script src="../../js/highlight.pack.js?1765366677"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1765365724"></script>
-    <script src="../../js/learn.js?1765365724"></script>
-    <script src="../../js/hugo-learn.js?1765365724"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1765366677"></script>
+    <script src="../../js/learn.js?1765366677"></script>
+    <script src="../../js/hugo-learn.js?1765366677"></script>
 
-    <link href="../../mermaid/mermaid.css?1765365724" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1765365724"></script>
+    <link href="../../mermaid/mermaid.css?1765366677" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1765366677"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
